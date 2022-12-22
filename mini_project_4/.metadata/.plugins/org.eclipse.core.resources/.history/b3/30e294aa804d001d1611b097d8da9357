@@ -1,0 +1,32 @@
+/*
+ * ultrasonic.c
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: omark
+ */
+#include "ultrasonic.h"
+#include "common_macros.h" /* To use the macros like SET_BIT */
+#include "std_types.h"
+
+
+void Ultrasonic_init(void)
+{
+
+}
+
+void Ultrasonic_Trigger(void)
+{
+	GPIO_writePin(ultrasonic_PORT_ID,ultrasonic_PIN_ID, LOGIC_HIGH);
+	_delay_us(10);
+	GPIO_writePin(ultrasonic_PORT_ID,ultrasonic_PIN_ID, LOGIC_LOW);
+}
+
+uint16 Ultrasonic_readDistance(void)
+{
+
+}
+
+void Ultrasonic_edgeProcessing(void)
+{
+
+}

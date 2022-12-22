@@ -1,0 +1,37 @@
+/*
+ * ultrasonic.c
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: omark
+ */
+#include "ultrasonic.h"
+#include "common_macros.h" /* To use the macros like SET_BIT */
+#include "std_types.h"
+
+
+void Ultrasonic_init(void)
+{
+	Icu_ConfigType Icu_Config = {F_CPU_8,RISING};
+	Icu_init(&Icu_Config); /* initialize ICU driver */
+	/* Set the Call back function pointer in the ICU driver */
+	Icu_setCallBack(Ultrasonic_edgeProcessing);
+	/*Setup the direction for the trigger pin as output*/
+	GPIO_setupPinDirection(ultrasonic_PORT_ID,ultrasonic_PIN_ID,PIN_OUTPUT);
+}
+
+void Ultrasonic_Trigger(void)
+{
+	GPIO_writePin(ultrasonic_PORT_ID,ultrasonic_PIN_ID, LOGIC_HIGH);
+	_delay_us(10);
+	GPIO_writePin(ultrasonic_PORT_ID,ultrasonic_PIN_ID, LOGIC_LOW);
+}
+
+uint16 Ultrasonic_readDistance(void)
+{
+
+}
+
+void Ultrasonic_edgeProcessing(void)
+{
+
+}

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/mini_p4/lcd.c" element2="/mini_p4/lcd.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1665945867682"/>&#x0A;<refactoring comment="Delete 8 resources" deleteContents="false" description="Delete 8 resources" element1="/mini_p4/common_macros.h" element2="/mini_p4/gpio.c" element3="/mini_p4/gpio.h" element4="/mini_p4/icu.c" element5="/mini_p4/icu.h" element6="/mini_p4/lcd.c" element7="/mini_p4/lcd.h" element8="/mini_p4/std_types.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="8" stamp="1665948519630"/>
+</session>

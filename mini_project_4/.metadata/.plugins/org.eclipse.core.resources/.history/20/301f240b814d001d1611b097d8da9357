@@ -1,0 +1,12 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: omark
+ */
+
+int main(void)
+{
+	Icu_ConfigType Icu_Config = {F_CPU_8,RISING};
+
+}

@@ -1,0 +1,29 @@
+/*
+ * ultrasonic.c
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: omark
+ */
+#include "ultrasonic.h"
+#include "common_macros.h" /* To use the macros like SET_BIT */
+
+
+void Ultrasonic_init(void)
+{
+
+}
+
+void Ultrasonic_Trigger(void)
+{
+
+}
+
+uint16 Ultrasonic_readDistance(void)
+{
+
+}
+
+void Ultrasonic_edgeProcessing(void)
+{
+
+}

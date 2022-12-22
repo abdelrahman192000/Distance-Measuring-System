@@ -1,0 +1,49 @@
+
+#include "lcd.h"
+#include "ultrasonic.h"
+#include "std_types.h"
+#include<avr/interrupt.h> // to enable I-bit
+#include<util/delay.h>
+
+int main(void)
+{
+	uint16 new_distance=0;
+	uint16 first_distance=0;
+	LCD_init();
+	Ultrasonic_init();   /* initialize ultrasonic/lcd driver */
+
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+
+	/* Display this string only once on LCD */
+	LCD_displayStringRowColumn(0, 0, "Distance=    cm");
+
+	while (1)
+	{
+		/* display the distance on LCD screen */
+		new_distance= Ultrasonic_readDistance();
+		LCD_moveCursor(0, 11);
+		/* Display the distance according to the number of its Digits */
+		if (new_distance != first_distance)//entering this condition only if the current distance different from the previous distance
+		{
+			if(new_distance < 10)
+			{
+				LCD_intgerToString(new_distance);
+				LCD_displayCharacter(' ');
+				LCD_displayCharacter(' ');
+			}
+			else if(new_distance < 100)
+			{
+				LCD_intgerToString(new_distance);
+				LCD_displayCharacter(' ');
+			}
+			else
+			{
+				LCD_intgerToString(new_distance);
+			}
+		}
+		first_distance= new_distance; // set the previous distance to be equal to the current position
+		_delay_ms(100);
+
+	}
+}
